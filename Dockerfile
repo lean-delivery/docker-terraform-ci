@@ -14,5 +14,5 @@ COPY --from=build /go/terraform /usr/bin
 COPY --from=build /go/bin/terraform-docs /usr/bin
 COPY --from=build /go/tflint /usr/bin
 COPY --from=build /go/bin/cred-alert /usr/bin
-RUN apk add --no-cache python3
+RUN apk add --no-cache python3 && apk add --no-cache git
 RUN pip3 install --no-cache-dir terrascan tf-readme-validator
