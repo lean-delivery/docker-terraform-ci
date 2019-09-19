@@ -7,7 +7,6 @@ Dockerfile to build terraform CI docker images.
 - terraform
 - cred-alert
 - tflint
-- terrascan
 - tf-readme-validator
 
 ## How to run
@@ -18,4 +17,3 @@ Dockerfile to build terraform CI docker images.
 - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t leandelivery/docker-terraform-ci tf_readme_validator.py
 - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t leandelivery/docker-terraform-ci cred-alert scan -f .
 - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t leandelivery/docker-terraform-ci tflint --error-with-issues
-- docker run --rm -v $(pwd):/work/ --workdir=/work/ -t leandelivery/docker-terraform-ci terrascan --location . --test all
