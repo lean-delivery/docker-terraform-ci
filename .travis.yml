@@ -7,4 +7,6 @@ services:
 
 install:
   - docker build -t test/test .
+
+script:
   - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test terraform version
