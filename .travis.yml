@@ -12,6 +12,6 @@ install:
 script:
   - docker run --rm -i hadolint/hadolint < Dockerfile
   - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test terraform version
-  - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test terraform tflint -v
-  - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test terraform cred-alert version
-  - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test terraform detect-secrets --version
+  - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test tflint -v
+  - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test cred-alert version
+  - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test detect-secrets --version
