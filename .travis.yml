@@ -6,9 +6,11 @@ services:
   - docker
 
 install:
+  - docker pull hadolint/hadolint
   - docker build -t test/test .
 
 script:
+  - docker run --rm -i hadolint/hadolint < Dockerfile
   - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test terraform version
   - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test terraform tflint -v
   - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test terraform cred-alert version
