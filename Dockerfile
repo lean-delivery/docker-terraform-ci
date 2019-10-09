@@ -14,5 +14,5 @@ RUN apk update && apk add --no-cache ca-certificates=20190108-r0
 COPY --from=build /go/terraform /usr/bin
 COPY --from=build /go/tflint /usr/bin
 COPY --from=build /go/bin/cred-alert /usr/bin
-RUN apk add --no-cache python3=3.7.4-r0 openssh=8.0_p1-r0 git=2.22.0-r0 && pip3 install --no-cache-dir detect-secrets==latest
+RUN apk add --no-cache python3=3.7.4-r0 openssh=8.0_p1-r0 git=2.22.0-r0 && pip3 install --no-cache-dir detect-secrets==0.12.7
 
