@@ -12,7 +12,6 @@ FROM alpine
 
 RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
 COPY --from=build /go/terraform /usr/bin
-COPY --from=build /go/bin/terraform-docs /usr/bin
 COPY --from=build /go/tflint /usr/bin
 COPY --from=build /go/bin/cred-alert /usr/bin
 RUN apk add --no-cache python3 openssh git && pip3 install --no-cache-dir detect-secrets
