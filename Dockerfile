@@ -1,6 +1,5 @@
 FROM golang:alpine AS build
 RUN apk add --no-cache git unzip
-RUN go get github.com/pivotal-cf/cred-alert
 RUN apk add --no-cache --virtual .build-dependancies git \
     && go get github.com/pivotal-cf/cred-alert \
     && go install github.com/pivotal-cf/cred-alert
