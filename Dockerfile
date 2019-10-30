@@ -5,7 +5,7 @@ RUN apk add --no-cache --virtual .build-dependancies git~=2.22 \
     && go install github.com/pivotal-cf/cred-alert
 RUN wget --quiet https://releases.hashicorp.com/terraform/0.12.12/terraform_0.12.12_linux_amd64.zip \
     && unzip terraform_0.12.12_linux_amd64.zip
-RUN wget --quiet https://github.com/wata727/tflint/releases/download/v0.11.2/tflint_linux_amd64.zip \
+RUN wget --quiet https://github.com/wata727/tflint/releases/download/v0.12.1/tflint_linux_amd64.zip \
     && unzip tflint_linux_amd64.zip
 
 FROM alpine:3.10
