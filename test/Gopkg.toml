@@ -1,0 +1,4 @@
+[[constraint]]
+  name = "github.com/gruntwork-io/terratest"
+  version = "0.17.4"
+
