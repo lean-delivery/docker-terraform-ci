@@ -11,7 +11,10 @@ install:
 
 script:
   - docker run --rm -i hadolint/hadolint < Dockerfile
-  - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test terraform version
-  - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test tflint -v
-  - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test cred-alert version
-  - docker run --rm -v $(pwd):/work/ --workdir=/work/ -t test/test detect-secrets --version
+  - docker run --rm -v $(pwd):/go/src/workdir/ --workdir=/go/src/workdir/ -t test/test terraform version
+  - docker run --rm -v $(pwd):/go/src/workdir/ --workdir=/go/src/workdir/ -t test/test tflint -v
+  - docker run --rm -v $(pwd):/go/src/workdir/ --workdir=/go/src/workdir/ -t test/test cred-alert version
+  - docker run --rm -v $(pwd):/go/src/workdir/ --workdir=/go/src/workdir/ -t test/test detect-secrets --version
+  - docker run --rm -v $(pwd):/go/src/workdir/ --workdir=/go/src/workdir/test/ -t test/test go version
+  - docker run --rm -v $(pwd):/go/src/workdir/ --workdir=/go/src/workdir/test/ -t test/test dep ensure
+  - docker run --rm -v $(pwd):/go/src/workdir/ --workdir=/go/src/workdir/test/ -t test/test go fmt
